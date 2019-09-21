@@ -1,2 +1,2 @@
-# mimic_III_DS_eda
-exploring discharge summaries in a medical dataset
+# Mimic_III_Project
+Python files for exploring the MIMIC III dataset and building a NER model.
