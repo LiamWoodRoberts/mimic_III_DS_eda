@@ -2,8 +2,6 @@ import pandas as pd
 import re
 from utils import get_count_df
 
-df = pd.read_csv("./discharge_summaries.csv")
-
 def sort_by_frequency(df,col):
     '''groups a column and returns a sorted list of most frequent values'''
     sorted_categories = df.groupby(col).count()['TEXT'].sort_values(ascending=False).index
@@ -70,7 +68,7 @@ def get_title_block(report,title):
 
 def run(title):
     # Load Data
-    df = pd.read_csv("./discharge_summaries.csv")
+    df = pd.read_csv("./data/discharge_summaries.csv")
     
     # Format Titles
     title_counts = get_count_df(df["TEXT"])
