@@ -34,7 +34,7 @@ def create_and_save_df(sections,start,n,foldername="nlp_data"):
     seqs = get_sentances(sections,start,n)
     df = pd.DataFrame()
     df["TEXT"] = seqs
-    df.to_csv(f"{foldername}/sentances_{start}-{start+n}.csv")
+    df.to_csv(f"{foldername}/sentances_{start}-{start+n}.csv",index=False)
     print("~~~File Saved Successfully")
     return df
 
@@ -45,9 +45,10 @@ if __name__ == "__main__":
     medication_sections = [i for i in medication_sections if i != "NOT FOUND"]
 
     # Convert Sections --> Sentances for NER
-    start = 10
-    n = 10
+    start = 150
+    n = 50
     seqs = get_sentances(medication_sections,start,n)
+    
     print("Sentance Examples:\n")
     [print(f"{i} - ",seqs[i],"\n") for i in range(5)]
     
